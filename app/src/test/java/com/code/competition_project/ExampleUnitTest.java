@@ -1,4 +1,4 @@
-package com.example.competition_project;
+package com.code.competition_project;
 
 import org.junit.Test;
 
