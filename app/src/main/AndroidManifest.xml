@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Competition_Project">
-        <activity android:name="com.code.competition_project.MainActivity">
+        <activity android:name=".SecondActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ScanActivity"></activity>
-        <activity android:name=".SecondActivity"></activity>
+        <activity android:name="com.code.competition_project.MainActivity"></activity>
     </application>
 
 </manifest>
