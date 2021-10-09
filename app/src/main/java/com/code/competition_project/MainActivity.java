@@ -1,6 +1,7 @@
 package com.code.competition_project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     Button bt_next;
     EditText et_name;
     CheckBox cb_agree;
+    long backKeyPressedTime = 0;
+    private Toast toast;
 
 
     @Override
@@ -60,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (et_name.getText().toString().equals("")){
-                    Toast.makeText(getApplicationContext(),"잘못된 입력입니다.",Toast.LENGTH_SHORT).show();
+                    toast.makeText(getApplicationContext(),"잘못된 입력입니다.",Toast.LENGTH_SHORT).show();
                 }else if (!cb_agree.isChecked()){
-                    Toast.makeText(getApplicationContext(),"개인정보 수집에 동의해주세요.",Toast.LENGTH_SHORT).show();
+                    toast.makeText(getApplicationContext(),"개인정보 수집에 동의해주세요.",Toast.LENGTH_SHORT).show();
                 }else {
                     Intent intent_view_Change = new Intent(getApplicationContext(),SecondActivity.class);
                     startActivity(intent_view_Change);
@@ -70,7 +73,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
 
+    @Override
+    public void onBackPressed() {
+        //뒤로가기 버튼 두번 입력시 종료되는 코드
+//        super.onBackPressed();
+        if (System.currentTimeMillis() > backKeyPressedTime + 2000){
+            backKeyPressedTime = System.currentTimeMillis();
+
+            toast = Toast.makeText(getApplicationContext(),"'뒤로' 버튼을 한번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+        if (System.currentTimeMillis() <= backKeyPressedTime +2000){
+            ActivityCompat.finishAffinity(this);
+            toast.cancel();
+        }
 
     }
 }

@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Competition_Project">
-        <activity android:name="com.code.competition_project.MainActivity">
+        <activity android:name="com.code.competition_project.MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScanActivity"></activity>
-        <activity android:name=".SecondActivity"></activity>
+        <activity android:name=".ScanActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".SecondActivity" android:screenOrientation="portrait"></activity>
 
     </application>
 
