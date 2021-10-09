@@ -5,92 +5,106 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#ffffff"
     tools:context=".MainActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_weight="1">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo"
-        android:layout_marginTop="10px"
-        />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/info"
-        />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/input"
-        android:layout_marginTop="100px"
-        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="60px"
-        >
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/SP_grade"
-            android:layout_width="120dp"
+        <ImageView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
-        <Spinner
-            android:id="@+id/SP_class"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"/>
-        <Spinner
-            android:id="@+id/SP_number"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+            android:layout_marginTop="10px"
+            android:src="@drawable/logo5" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/info" />
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80px"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="70px"
+        android:layout_width="1000px"
+        android:layout_height="1000px"
+        android:orientation="vertical"
+        android:background="@drawable/layout_border"
+        android:elevation="12dp"
+        android:layout_marginTop="40px"
+        android:layout_gravity="center"
         >
-        <TextView
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0px"
+            android:src="@drawable/input2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0px"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/SP_grade"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/SP_class"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/SP_number"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80px"
+            android:layout_marginTop="70px"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이름: "
+                android:textColor="@color/black"
+                android:textSize="50px" />
+
+            <EditText
+                android:id="@+id/ET_name"
+                android:layout_width="400px"
+                android:layout_height="match_parent"
+                android:background="@drawable/edit_text_border"
+                android:inputType="textPersonName"
+                android:textSize="50px"
+                android:maxLength="4" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/CB_agree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="이름:"
-            android:textSize="45px"
-            android:textColor="@color/black"
-            />
-        <EditText
-            android:layout_width="360px"
-            android:layout_height="match_parent"
-            android:maxLength="4"
-            android:background="@drawable/edit_text_border"
-            android:inputType="textMultiLine|textNoSuggestions"
-            />
+            android:layout_gravity="center"
+            android:layout_marginTop="220px"
+            android:text="개인정보 수집에 동의하시겠습니까?"
+            android:textSize="45px" />
     </LinearLayout>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="개인정보 수집에 동의하시겠습니까?"
-        android:textSize="45px"
-        android:layout_marginTop="110px"
-        />
-</LinearLayout>
+    </LinearLayout>
+
     <Button
+        android:id="@+id/BT_next"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="210px"
         android:background="@drawable/custom_button"
         android:text="다음으로"
-        android:textSize="50px"
-        />
+        android:fontFamily="@font/pretendard_medium"
+        android:textSize="50px" />
 
 
 </LinearLayout>

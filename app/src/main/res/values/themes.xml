@@ -3,7 +3,7 @@
     <style name="Theme.Competition_Project" parent="Theme.AppCompat.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">#BD6E2A</item>
+        <item name="colorPrimaryVariant">#000000</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
