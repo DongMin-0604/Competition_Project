@@ -23,7 +23,7 @@ public class ScanActivity extends AppCompatActivity {
 
         qrScan = new IntentIntegrator(this);
         qrScan.setOrientationLocked(false);
-        qrScan.setPrompt("qr코드를 스캔해 주세요");
+        qrScan.setPrompt("QR코드를 스캔해 주세요");
         qrScan.initiateScan();
     }
 
