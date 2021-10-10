@@ -110,6 +110,7 @@
         android:layout_height="210px"
         android:background="@drawable/custom_button"
         android:text="다음으로"
+        android:textColor="@color/black"
         android:fontFamily="@font/pretendard_medium"
         android:textSize="50px" />
 

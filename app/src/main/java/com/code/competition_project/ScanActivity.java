@@ -15,6 +15,7 @@ public class ScanActivity extends AppCompatActivity {
     private IntentIntegrator qrScan;
     long backKeyPressedTime = 0;
     private Toast toast;
+    String temp;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +35,7 @@ public class ScanActivity extends AppCompatActivity {
 
 
             }else {
-                Toast.makeText(this,"스캔 완료" + result.getContents(),Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"스캔 완료 " + result.getContents(),Toast.LENGTH_LONG).show();
                 Intent intent_view_Change = new Intent(getApplicationContext(),Result_Activity.class);
                 startActivity(intent_view_Change);
             }
