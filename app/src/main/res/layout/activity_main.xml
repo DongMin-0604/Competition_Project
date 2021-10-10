@@ -26,7 +26,7 @@
             android:src="@drawable/info" />
     <LinearLayout
         android:layout_width="1000px"
-        android:layout_height="1000px"
+        android:layout_height="920px"
         android:orientation="vertical"
         android:background="@drawable/layout_border"
         android:elevation="12dp"
@@ -42,28 +42,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0px"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <Spinner
                 android:id="@+id/SP_grade"
                 android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:dropDownWidth="100dp"
+                android:layout_height="30dp"
+                android:dropDownWidth="80dp"
                 />
 
             <Spinner
                 android:id="@+id/SP_class"
                 android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:dropDownWidth="100dp"/>
+                android:layout_height="30dp"
+                android:dropDownWidth="80dp"
+                />
 
             <Spinner
                 android:id="@+id/SP_number"
                 android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:dropDownWidth="100dp"/>
+                android:layout_height="30dp"
+                android:dropDownWidth="80dp"
+                />
         </LinearLayout>
 
         <LinearLayout
