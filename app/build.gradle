@@ -36,4 +36,7 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    //QR코드 스캔에 필요한 코드
+    implementation('com.journeyapps:zxing-android-embedded:3.6.0') { transitive = false }
+    implementation 'com.google.zxing:core:3.3.0'
 }

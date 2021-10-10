@@ -46,15 +46,15 @@ public class MainActivity extends AppCompatActivity {
         List<String> array_number = Arrays.asList(getResources().getStringArray(R.array.array_number));
 
         //ArrayAdapter를 만들어서 학년 값을 XML에 스피너에 연결
-        ArrayAdapter<String> adapter_grade = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,array_grade);
+        ArrayAdapter<String> adapter_grade = new ArrayAdapter<String>(this,R.layout.custom_spinner,array_grade);
         adapter_grade.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         SP_grade.setAdapter(adapter_grade);
 
-        ArrayAdapter<String> adapter_class = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,array_class);
+        ArrayAdapter<String> adapter_class = new ArrayAdapter<String>(this,R.layout.custom_spinner,array_class);
         adapter_class .setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         SP_class.setAdapter(adapter_class);
 
-        ArrayAdapter<String> adapter_number = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,array_number);
+        ArrayAdapter<String> adapter_number = new ArrayAdapter<String>(this,R.layout.custom_spinner,array_number);
         adapter_number.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         SP_number.setAdapter(adapter_number);
 

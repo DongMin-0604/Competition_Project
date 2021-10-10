@@ -49,17 +49,21 @@
             <Spinner
                 android:id="@+id/SP_grade"
                 android:layout_width="110dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:dropDownWidth="100dp"
+                />
 
             <Spinner
                 android:id="@+id/SP_class"
                 android:layout_width="110dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:dropDownWidth="100dp"/>
 
             <Spinner
                 android:id="@+id/SP_number"
                 android:layout_width="110dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:dropDownWidth="100dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -82,6 +86,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/edit_text_border"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
                 android:textSize="50px"
                 android:maxLength="4" />
         </LinearLayout>
@@ -93,11 +98,12 @@
             android:layout_gravity="center"
             android:layout_marginTop="220px"
             android:text="개인정보 수집에 동의하시겠습니까?"
+            android:textColor="@color/black"
             android:textSize="45px" />
     </LinearLayout>
     </LinearLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/BT_next"
         android:layout_width="match_parent"
         android:layout_height="210px"
