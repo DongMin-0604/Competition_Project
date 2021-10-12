@@ -1,8 +1,10 @@
 package com.code.competition_project;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -43,16 +45,20 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(intent_view_Change);
             }
         });
-        //첫 실행을 체크하기 위한 영역
-        shdprefs = getSharedPreferences("isfirst?",MODE_PRIVATE);
     }
     public void checkFirstRun(){
-        boolean isFirstRun = shdprefs.getBoolean("isfirst?",true);
-        if (isFirstRun){
+        SharedPreferences pref = getSharedPreferences("isFirst", Activity.MODE_PRIVATE);
+        boolean first = pref.getBoolean("isFirst", false);
+        if(first == false){
+            Log.d("Is first Time?", "first");
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putBoolean("isFirst",true);
+            editor.commit();
+            //앱 최초 실행시 하고 싶은 작업
             Intent intent_view_Change = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent_view_Change);
-
-            shdprefs.edit().putBoolean("isfirst?",false).apply();
+        }else{
+            Log.d("Is first Time?", "not first");
         }
     }
 

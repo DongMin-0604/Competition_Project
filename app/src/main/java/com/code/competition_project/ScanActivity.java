@@ -57,6 +57,7 @@ public class ScanActivity extends AppCompatActivity {
         }
         if (System.currentTimeMillis() <= backKeyPressedTime +2000){
             ActivityCompat.finishAffinity(this);
+//            finish();
             toast.cancel();
         }
     }
