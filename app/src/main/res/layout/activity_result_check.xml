@@ -9,22 +9,150 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="결과 화면"
         android:textSize="100px"
         android:gravity="center"
         android:textColor="@color/black"
-        android:layout_weight="1"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_marginTop="100px"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="학년: "
+        android:textSize="100px"
+        android:gravity="center"
+        android:textColor="#3C3C3C"
         />
     <TextView
-        android:id="@+id/TV_result"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text=""
+        android:id="@+id/TV_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
         android:textSize="100px"
         android:gravity="center"
         android:textColor="@color/black"
-        android:layout_weight="1"
         />
-
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="반: "
+            android:textSize="100px"
+            android:gravity="center"
+            android:textColor="#3C3C3C"
+            />
+        <TextView
+            android:id="@+id/TV_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="100px"
+            android:gravity="center"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="번호: "
+            android:textSize="100px"
+            android:gravity="center"
+            android:textColor="#3C3C3C"
+            />
+        <TextView
+            android:id="@+id/TV_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="100px"
+            android:gravity="center"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름: "
+            android:textSize="100px"
+            android:gravity="center"
+            android:textColor="#3C3C3C"
+            />
+        <TextView
+            android:id="@+id/TV_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="100px"
+            android:gravity="center"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="좌석 번호: "
+            android:textSize="100px"
+            android:gravity="center"
+            android:textColor="#3C3C3C"
+            />
+        <TextView
+            android:id="@+id/TV_seat_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="100px"
+            android:gravity="center"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시간: "
+            android:textSize="100px"
+            android:gravity="center"
+            android:textColor="#3C3C3C"
+            />
+        <TextView
+            android:id="@+id/TV_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="100px"
+            android:gravity="center"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
 </LinearLayout>

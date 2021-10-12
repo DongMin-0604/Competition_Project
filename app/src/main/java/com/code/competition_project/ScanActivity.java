@@ -16,15 +16,26 @@ public class ScanActivity extends AppCompatActivity {
     long backKeyPressedTime = 0;
     private Toast toast;
     String temp;
+    String grade,class1,number,name,seatNumber,time;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
 
+        getinfo();
+
         qrScan = new IntentIntegrator(this);
         qrScan.setOrientationLocked(false);
         qrScan.setPrompt("QR코드를 스캔해 주세요");
         qrScan.initiateScan();
+    }
+    public void getinfo(){
+        Intent intent_getinfo = getIntent();
+        grade = intent_getinfo.getStringExtra("grade");
+        class1 = intent_getinfo.getStringExtra("class");
+        number = intent_getinfo.getStringExtra("number");
+        name = intent_getinfo.getStringExtra("name");;
+
     }
 
     @Override
@@ -37,6 +48,10 @@ public class ScanActivity extends AppCompatActivity {
             }else {
                 Toast.makeText(this,"스캔 완료 " + result.getContents(),Toast.LENGTH_LONG).show();
                 Intent intent_view_Change = new Intent(getApplicationContext(),Result_Activity.class);
+                intent_view_Change.putExtra("grade",grade);
+                intent_view_Change.putExtra("class",class1);
+                intent_view_Change.putExtra("number",number);
+                intent_view_Change.putExtra("name",name);
                 startActivity(intent_view_Change);
             }
         }else {

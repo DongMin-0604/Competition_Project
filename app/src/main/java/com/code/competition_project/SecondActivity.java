@@ -20,14 +20,13 @@ public class SecondActivity extends AppCompatActivity {
     ImageButton QR_code_BT,ChangeInfo_BT;
     long backKeyPressedTime = 0;
     private Toast toast;
-    SharedPreferences shdprefs;
-
+    String grade,class1,number,name,seatNumber,time;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         checkFirstRun();
         setContentView(R.layout.activity_second);
-
+        getinfo();
         QR_code_BT = findViewById(R.id.QR_code_bt);
         ChangeInfo_BT = findViewById(R.id.information_bt);
 
@@ -42,9 +41,21 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent_view_Change = new Intent(getApplicationContext(),ScanActivity.class);
+                intent_view_Change.putExtra("grade",grade);
+                intent_view_Change.putExtra("class",class1);
+                intent_view_Change.putExtra("number",number);
+                intent_view_Change.putExtra("name",name);
                 startActivity(intent_view_Change);
             }
         });
+    }
+    public void getinfo(){
+        Intent intent_getinfo = getIntent();
+        grade = intent_getinfo.getStringExtra("grade");
+        class1 = intent_getinfo.getStringExtra("class");
+        number = intent_getinfo.getStringExtra("number");
+        name = intent_getinfo.getStringExtra("name");;
+
     }
     public void checkFirstRun(){
         SharedPreferences pref = getSharedPreferences("isFirst", Activity.MODE_PRIVATE);
