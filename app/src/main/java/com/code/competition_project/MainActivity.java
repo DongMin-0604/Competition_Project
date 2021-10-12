@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     CheckBox cb_agree;
     long backKeyPressedTime = 0;
     private Toast toast;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +73,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
+
+
 
     @Override
     public void onBackPressed() {

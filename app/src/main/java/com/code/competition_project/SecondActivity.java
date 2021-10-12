@@ -1,6 +1,7 @@
 package com.code.competition_project;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,17 +15,27 @@ import androidx.core.app.ActivityCompat;
 
 public class SecondActivity extends AppCompatActivity {
 
-    ImageButton QR_code_BT;
+    ImageButton QR_code_BT,ChangeInfo_BT;
     long backKeyPressedTime = 0;
     private Toast toast;
+    SharedPreferences shdprefs;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        checkFirstRun();
         setContentView(R.layout.activity_second);
 
         QR_code_BT = findViewById(R.id.QR_code_bt);
+        ChangeInfo_BT = findViewById(R.id.information_bt);
 
+        ChangeInfo_BT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_view_Change = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent_view_Change);
+            }
+        });
         QR_code_BT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,7 +43,17 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(intent_view_Change);
             }
         });
+        //첫 실행을 체크하기 위한 영역
+        shdprefs = getSharedPreferences("isfirst?",MODE_PRIVATE);
+    }
+    public void checkFirstRun(){
+        boolean isFirstRun = shdprefs.getBoolean("isfirst?",true);
+        if (isFirstRun){
+            Intent intent_view_Change = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent_view_Change);
 
+            shdprefs.edit().putBoolean("isfirst?",false).apply();
+        }
     }
 
     @Override

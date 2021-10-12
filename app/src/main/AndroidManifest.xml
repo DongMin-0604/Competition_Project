@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:hardwareAccelerated="true"
         android:theme="@style/Theme.Competition_Project">
-        <activity android:name="com.code.competition_project.MainActivity" android:screenOrientation="portrait">
+        <activity android:name=".SecondActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
             android:screenOrientation="fullSensor"
             tools:replace="screenOrientation"/>
         <activity android:name=".ScanActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".SecondActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.code.competition_project.MainActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".Result_Activity" android:screenOrientation="portrait"></activity>
 
     </application>
