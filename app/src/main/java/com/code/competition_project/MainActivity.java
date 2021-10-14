@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,14 +26,17 @@ public class MainActivity extends AppCompatActivity {
     Button bt_next;
     EditText et_name;
     CheckBox cb_agree;
-    long backKeyPressedTime = 0;
     private Toast toast;
+    boolean Update_Check = true;
     String grade_text,class_text,number_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intent_FLAG = new Intent();
+        intent_FLAG.addFlags(intent_FLAG.FLAG_ACTIVITY_CLEAR_TOP);
 
         SP_grade = findViewById(R.id.SP_grade);
         SP_class = findViewById(R.id.SP_class);
@@ -81,31 +85,21 @@ public class MainActivity extends AppCompatActivity {
                     intent_view_Change.putExtra("class",class_text);
                     intent_view_Change.putExtra("number",number_text);
                     intent_view_Change.putExtra("name",et_name.getText().toString());
+                    intent_view_Change.putExtra("Update",Update_Check);
                     startActivity(intent_view_Change);
                 }
 
             }
         });
 
-
     }
-
 
 
     @Override
     public void onBackPressed() {
         //뒤로가기 버튼 두번 입력시 종료되는 코드
 //        super.onBackPressed();
-        if (System.currentTimeMillis() > backKeyPressedTime + 2000){
-            backKeyPressedTime = System.currentTimeMillis();
-            toast = Toast.makeText(getApplicationContext(),"'뒤로' 버튼을 한번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT);
+            toast = Toast.makeText(getApplicationContext(),"정보 입력창에서는 앱을 종료하실 수 없습니다.", Toast.LENGTH_SHORT);
             toast.show();
-            return;
-        }
-        if (System.currentTimeMillis() <= backKeyPressedTime +2000){
-            ActivityCompat.finishAffinity(this);
-            toast.cancel();
-        }
-
     }
 }

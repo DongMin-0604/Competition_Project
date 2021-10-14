@@ -21,16 +21,18 @@ public class SecondActivity extends AppCompatActivity {
     ImageButton QR_code_BT,ChangeInfo_BT;
     long backKeyPressedTime = 0;
     private Toast toast;
+    boolean Update_Check;
     String grade,class1,number,name,seatNumber,time;
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        checkFirstRun();
+        checkFirstRun();
         setContentView(R.layout.activity_second);
         QR_code_BT = findViewById(R.id.QR_code_bt);
         ChangeInfo_BT = findViewById(R.id.information_bt);
         getResult();
-        
+
         ChangeInfo_BT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,10 +56,41 @@ public class SecondActivity extends AppCompatActivity {
     public void getResult(){
         //메인에서 값 받아오기
         Intent intent = getIntent();
+        Update_Check = intent.getBooleanExtra("Update",false);
         grade = intent.getStringExtra("grade");
         class1 = intent.getStringExtra("class");
         number = intent.getStringExtra("number");
         name = intent.getStringExtra("name");
+
+        //값 저장을 위해 sharedPreferences 불러오기
+        sharedPreferences = getSharedPreferences("value1",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        //수정을 했는지 체크를 위한 if문
+        if (Update_Check == false){
+            //수정을 하지 않았을 경우 기존값 표시 후 기존값 저장
+            grade = sharedPreferences.getString("saveGrade",intent.getStringExtra("grade"));
+            class1 = sharedPreferences.getString("saveClass",intent.getStringExtra("grade"));
+            number = sharedPreferences.getString("saveNumber",intent.getStringExtra("grade"));
+            name = sharedPreferences.getString("saveName",intent.getStringExtra("grade"));
+            editor.putString("saveGrade",grade);
+            editor.putString("saveClass",class1);
+            editor.putString("saveNumber",number);
+            editor.putString("saveName",name);
+            editor.apply();
+            editor.commit();
+        }else if (Update_Check == true){
+            //수정을 했을때 값 다시 저장하고 표시
+            editor.putString("saveGrade",intent.getStringExtra("grade"));
+            editor.putString("saveClass",intent.getStringExtra("class"));
+            editor.putString("saveNumber",intent.getStringExtra("number"));
+            editor.putString("saveName",intent.getStringExtra("name"));
+            editor.apply();
+            editor.commit();
+            grade = sharedPreferences.getString("saveGrade", intent.getStringExtra("grade"));
+            class1 = sharedPreferences.getString("saveClass",intent.getStringExtra("class"));
+            number = sharedPreferences.getString("saveNumber",intent.getStringExtra("number"));
+            name = sharedPreferences.getString("saveName",intent.getStringExtra("name"));
+        }
     }
     public void checkFirstRun(){
         SharedPreferences pref = getSharedPreferences("isFirst", Activity.MODE_PRIVATE);
@@ -90,5 +123,10 @@ public class SecondActivity extends AppCompatActivity {
             ActivityCompat.finishAffinity(this);
             toast.cancel();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }
