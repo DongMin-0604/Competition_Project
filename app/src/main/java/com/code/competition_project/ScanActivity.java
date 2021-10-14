@@ -2,6 +2,7 @@ package com.code.competition_project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -22,19 +23,22 @@ public class ScanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
 
-        getinfo();
-
         qrScan = new IntentIntegrator(this);
         qrScan.setOrientationLocked(false);
         qrScan.setPrompt("QR코드를 스캔해 주세요");
         qrScan.initiateScan();
+
+        getResult();
     }
-    public void getinfo(){
-        Intent intent_getinfo = getIntent();
-        grade = intent_getinfo.getStringExtra("grade");
-        class1 = intent_getinfo.getStringExtra("class");
-        number = intent_getinfo.getStringExtra("number");
-        name = intent_getinfo.getStringExtra("name");;
+
+    public void getResult(){
+        //세컨드 엑티비티에서 값 받아오기
+        Intent intent = getIntent();
+        grade = intent.getStringExtra("grade_Second");
+        class1 = intent.getStringExtra("class_Second");
+        number = intent.getStringExtra("number_Second");
+        name = intent.getStringExtra("name_Second");
+
 
     }
 
@@ -48,10 +52,11 @@ public class ScanActivity extends AppCompatActivity {
             }else {
                 Toast.makeText(this,"스캔 완료 " + result.getContents(),Toast.LENGTH_LONG).show();
                 Intent intent_view_Change = new Intent(getApplicationContext(),Result_Activity.class);
-                intent_view_Change.putExtra("grade",grade);
-                intent_view_Change.putExtra("class",class1);
-                intent_view_Change.putExtra("number",number);
-                intent_view_Change.putExtra("name",name);
+                //세컨드 엑티비티로 값 넘기기
+                intent_view_Change.putExtra("grade_Scan",grade);
+                intent_view_Change.putExtra("class_Scan",class1);
+                intent_view_Change.putExtra("number_Scan",number);
+                intent_view_Change.putExtra("name_Scan",name);
                 startActivity(intent_view_Change);
             }
         }else {

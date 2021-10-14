@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -61,21 +62,21 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
         //'다음으로' 버튼 영역
         bt_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Spinner 값 가져오기
-                grade_text = SP_grade.getSelectedItem().toString();
-                class_text = SP_class.getSelectedItem().toString();
-                number_text = SP_number.getSelectedItem().toString();
                 if (et_name.getText().toString().equals("")){
                     toast.makeText(getApplicationContext(),"잘못된 입력입니다.",Toast.LENGTH_SHORT).show();
                 }else if (!cb_agree.isChecked()){
                     toast.makeText(getApplicationContext(),"개인정보 수집에 동의해주세요.",Toast.LENGTH_SHORT).show();
                 }else {
                     Intent intent_view_Change = new Intent(getApplicationContext(),SecondActivity.class);
+                    //Spinner 값 가져오기
+                    grade_text = SP_grade.getSelectedItem().toString();
+                    class_text = SP_class.getSelectedItem().toString();
+                    number_text = SP_number.getSelectedItem().toString();
+                    //세컨드 엑티비티로 입력값 전달
                     intent_view_Change.putExtra("grade",grade_text);
                     intent_view_Change.putExtra("class",class_text);
                     intent_view_Change.putExtra("number",number_text);

@@ -20,32 +20,28 @@ public class Result_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_check);
         init();
-        setinfo();
+        getResult();
+        setTextView();
 
     }
-    public void setinfo(){
-        Intent intent_setinfo = getIntent();
-        grade = intent_setinfo.getStringExtra("grade");
-        class1 = intent_setinfo.getStringExtra("class");
-        number = intent_setinfo.getStringExtra("number");
-        name = intent_setinfo.getStringExtra("name");
-
-        if (intent_setinfo.hasExtra("grade")){
-            tv_grade.setText(grade);
-        }
-        if (intent_setinfo.hasExtra("class")){
-            tv_class.setText(class1);
-        }
-        if (intent_setinfo.hasExtra("number")){
-            tv_number.setText(number);
-        }
-        if (intent_setinfo.hasExtra("name")){
-            tv_name.setText(name);
-        }
-
+    public void setTextView(){
+        //텍스트 뷰에 값 넣기
+        tv_grade.setText(grade);
+        tv_class.setText(class1);
+        tv_number.setText(number);
+        tv_name.setText(name);
+    }
+    public void getResult(){
+        //스캔 엑티비티에서 값 받아오기
+        Intent intent = getIntent();
+        grade = intent.getStringExtra("grade_Scan");
+        class1 = intent.getStringExtra("class_Scan");
+        number = intent.getStringExtra("number_Scan");
+        name = intent.getStringExtra("name_Scan");
     }
 
     public void init(){
+        //기본 세팅
         tv_grade = findViewById(R.id.TV_grade);
         tv_class = findViewById(R.id.TV_class);
         tv_number = findViewById(R.id.TV_number);

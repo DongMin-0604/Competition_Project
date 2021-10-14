@@ -33,5 +33,4 @@
         android:scaleType="centerCrop"
         android:src="@drawable/button_image" />
 
-
 </LinearLayout>

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -24,12 +25,12 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        checkFirstRun();
+//        checkFirstRun();
         setContentView(R.layout.activity_second);
-        getinfo();
         QR_code_BT = findViewById(R.id.QR_code_bt);
         ChangeInfo_BT = findViewById(R.id.information_bt);
-
+        getResult();
+        
         ChangeInfo_BT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,21 +42,22 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent_view_Change = new Intent(getApplicationContext(),ScanActivity.class);
-                intent_view_Change.putExtra("grade",grade);
-                intent_view_Change.putExtra("class",class1);
-                intent_view_Change.putExtra("number",number);
-                intent_view_Change.putExtra("name",name);
+                //스캔 엑티비티로 값 전달
+                intent_view_Change.putExtra("grade_Second",grade);
+                intent_view_Change.putExtra("class_Second",class1);
+                intent_view_Change.putExtra("number_Second",number);
+                intent_view_Change.putExtra("name_Second",name);
                 startActivity(intent_view_Change);
             }
         });
     }
-    public void getinfo(){
-        Intent intent_getinfo = getIntent();
-        grade = intent_getinfo.getStringExtra("grade");
-        class1 = intent_getinfo.getStringExtra("class");
-        number = intent_getinfo.getStringExtra("number");
-        name = intent_getinfo.getStringExtra("name");;
-
+    public void getResult(){
+        //메인에서 값 받아오기
+        Intent intent = getIntent();
+        grade = intent.getStringExtra("grade");
+        class1 = intent.getStringExtra("class");
+        number = intent.getStringExtra("number");
+        name = intent.getStringExtra("name");
     }
     public void checkFirstRun(){
         SharedPreferences pref = getSharedPreferences("isFirst", Activity.MODE_PRIVATE);
