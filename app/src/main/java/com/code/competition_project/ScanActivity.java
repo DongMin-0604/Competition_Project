@@ -51,12 +51,14 @@ public class ScanActivity extends AppCompatActivity {
 
             }else {
                 Toast.makeText(this,"스캔 완료 " + result.getContents(),Toast.LENGTH_LONG).show();
+                seatNumber = result.getContents();
                 Intent intent_view_Change = new Intent(getApplicationContext(),Result_Activity.class);
                 //세컨드 엑티비티로 값 넘기기
                 intent_view_Change.putExtra("grade_Scan",grade);
                 intent_view_Change.putExtra("class_Scan",class1);
                 intent_view_Change.putExtra("number_Scan",number);
                 intent_view_Change.putExtra("name_Scan",name);
+                intent_view_Change.putExtra("seatNumber_Scan",seatNumber);
                 startActivity(intent_view_Change);
             }
         }else {

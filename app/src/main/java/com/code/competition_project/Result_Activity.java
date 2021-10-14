@@ -30,6 +30,7 @@ public class Result_Activity extends AppCompatActivity {
         tv_class.setText(class1);
         tv_number.setText(number);
         tv_name.setText(name);
+        tv_seatNumber.setText(seatNumber);
     }
     public void getResult(){
         //스캔 엑티비티에서 값 받아오기
@@ -38,6 +39,7 @@ public class Result_Activity extends AppCompatActivity {
         class1 = intent.getStringExtra("class_Scan");
         number = intent.getStringExtra("number_Scan");
         name = intent.getStringExtra("name_Scan");
+        seatNumber = intent.getStringExtra("seatNumber_Scan");
     }
 
     public void init(){
