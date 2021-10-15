@@ -21,7 +21,6 @@ public class ScanActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scan);
 
         qrScan = new IntentIntegrator(this);
         qrScan.setOrientationLocked(false);
@@ -47,7 +46,8 @@ public class ScanActivity extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
         if (result != null){
             if (result.getContents() == null){
-
+                finish();
+                Toast.makeText(this,"스캔 오류",Toast.LENGTH_SHORT).show();
 
             }else {
                 Toast.makeText(this,"스캔 완료 " + result.getContents(),Toast.LENGTH_LONG).show();
@@ -69,18 +69,6 @@ public class ScanActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-//        super.onBackPressed();
-        if (System.currentTimeMillis() > backKeyPressedTime + 2000){
-            backKeyPressedTime = System.currentTimeMillis();
-
-            toast = Toast.makeText(getApplicationContext(),"'뒤로' 버튼을 한번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT);
-            toast.show();
-            return;
-        }
-        if (System.currentTimeMillis() <= backKeyPressedTime +2000){
-            ActivityCompat.finishAffinity(this);
-//            finish();
-            toast.cancel();
-        }
+        super.onBackPressed();
     }
 }
