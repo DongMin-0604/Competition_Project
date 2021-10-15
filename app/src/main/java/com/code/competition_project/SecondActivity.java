@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -50,6 +51,16 @@ public class SecondActivity extends AppCompatActivity {
                 intent_view_Change.putExtra("number_Second",number);
                 intent_view_Change.putExtra("name_Second",name);
                 startActivity(intent_view_Change);
+                //버튼 클릭시 이미지 변경
+                QR_code_BT.setImageResource(R.drawable.img_bt_on);
+                //변경된 이미지 1초뒤 원상 복구
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        QR_code_BT.setImageResource(R.drawable.img_bt);
+                    }
+                },1000);
             }
         });
     }
