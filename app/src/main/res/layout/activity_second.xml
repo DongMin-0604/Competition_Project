@@ -10,7 +10,9 @@
     <ImageButton
         android:id="@+id/information_bt"
         android:layout_width="128dp"
-        android:layout_height="72dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="10px"
+        android:layout_gravity="left"
         android:background="@android:color/transparent"
         android:scaleType="centerCrop"
         android:src="@drawable/correction_information" />
@@ -26,7 +28,7 @@
     <ImageButton
         android:id="@+id/QR_code_bt"
         android:layout_width="359dp"
-        android:layout_height="88dp"
+        android:layout_height="81dp"
         android:layout_gravity="center"
         android:layout_marginTop="38dp"
         android:background="@android:color/transparent"
