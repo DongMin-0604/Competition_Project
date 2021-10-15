@@ -1,26 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background=""
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#715B47"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    tools:context=".SplashActivity">
 
     <ImageView
-        android:layout_width="450px"
-        android:layout_height="450px"
-        android:layout_marginBottom="100px"
-        android:src="splash_logo"
+        android:layout_width="720px"
+        android:layout_height="720px"
+        android:layout_marginBottom="60px"
+        android:src="@drawable/splash_img2"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="45px"
+        android:textSize="50px"
         android:gravity="center"
-        android:textColor="@color/black"
-        android:text="상일미디어고등학교 교내 개발 대회\n-질수없조-"/>
+        android:textColor="@color/white"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="상일미디어고등학교 교내 개발 대회"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50px"
+        android:layout_marginTop="10px"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="-질수없조-"/>
 
 </LinearLayout>
