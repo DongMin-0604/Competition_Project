@@ -2,6 +2,7 @@ package com.code.competition_project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class ScanActivity extends AppCompatActivity {
         qrScan.initiateScan();
 
         getResult();
+
     }
 
     public void getResult(){
@@ -47,10 +49,10 @@ public class ScanActivity extends AppCompatActivity {
         if (result != null){
             if (result.getContents() == null){
                 finish();
-                Toast.makeText(this,"스캔 오류",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"스캔 취소",Toast.LENGTH_SHORT).show();
 
             }else {
-                Toast.makeText(this,"스캔 완료 " + result.getContents(),Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"스캔 완료",Toast.LENGTH_LONG).show();
                 seatNumber = result.getContents();
                 Intent intent_view_Change = new Intent(getApplicationContext(),Result_Activity.class);
                 //세컨드 엑티비티로 값 넘기기

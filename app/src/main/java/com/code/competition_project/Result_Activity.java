@@ -3,6 +3,9 @@ package com.code.competition_project;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +18,7 @@ public class Result_Activity extends AppCompatActivity {
     private Toast toast;
     TextView tv_grade,tv_class,tv_number,tv_name,tv_seatNumber,tv_time;
     String grade,class1,number,name,seatNumber,time;
+    ImageButton bt_next;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +26,14 @@ public class Result_Activity extends AppCompatActivity {
         init();
         getResult();
         setTextView();
+
+        bt_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_view_Change = new Intent(getApplicationContext(),SecondActivity.class);
+                startActivity(intent_view_Change);
+            }
+        });
 
     }
     public void setTextView(){
@@ -49,6 +61,7 @@ public class Result_Activity extends AppCompatActivity {
         tv_number = findViewById(R.id.TV_number);
         tv_name = findViewById(R.id.TV_name);
         tv_seatNumber = findViewById(R.id.TV_seat_number);
+        bt_next = findViewById(R.id.BT_next);
 
     }
     @Override
