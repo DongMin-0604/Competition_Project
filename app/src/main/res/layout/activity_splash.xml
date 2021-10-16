@@ -28,11 +28,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="50px"
+        android:textSize="45px"
         android:layout_marginTop="10px"
         android:gravity="center"
         android:textColor="@color/white"
         android:fontFamily="@font/pretendard_bold"
-        android:text="-질수없조-"/>
+        android:text="질수없조-신동민,박민주,이대용,최하랑"/>
 
 </LinearLayout>
