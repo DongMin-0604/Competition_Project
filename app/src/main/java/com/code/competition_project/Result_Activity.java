@@ -13,12 +13,26 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Result_Activity extends AppCompatActivity {
     long backKeyPressedTime = 0;
     private Toast toast;
     TextView tv_grade,tv_class,tv_number,tv_name,tv_seatNumber,tv_time;
     String grade,class1,number,name,seatNumber,time;
     ImageButton bt_next;
+    long mNow;
+    Date mDate;
+    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+    //파이어베이스 전송 코드 영역
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference = firebaseDatabase.getReference();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +40,7 @@ public class Result_Activity extends AppCompatActivity {
         init();
         getResult();
         setTextView();
+        SendToFireBase();
 
         bt_next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +58,7 @@ public class Result_Activity extends AppCompatActivity {
         tv_number.setText(number);
         tv_name.setText(name);
         tv_seatNumber.setText(seatNumber);
+        tv_time.setText(getTime());
     }
     public void getResult(){
         //스캔 엑티비티에서 값 받아오기
@@ -53,7 +69,6 @@ public class Result_Activity extends AppCompatActivity {
         name = intent.getStringExtra("name_Scan");
         seatNumber = intent.getStringExtra("seatNumber_Scan");
     }
-
     public void init(){
         //기본 세팅
         tv_grade = findViewById(R.id.TV_grade);
@@ -62,7 +77,19 @@ public class Result_Activity extends AppCompatActivity {
         tv_name = findViewById(R.id.TV_name);
         tv_seatNumber = findViewById(R.id.TV_seat_number);
         bt_next = findViewById(R.id.BT_next);
+        tv_time = findViewById(R.id.TV_time);
 
+    }
+    private String getTime(){
+        //현재 시각 받아오기
+        mNow = System.currentTimeMillis();
+        mDate = new Date(mNow);
+
+        return format.format(mDate);
+    }
+    public void SendToFireBase(){
+        //파이어베이스 전송 코드 영역
+        databaseReference.child(getTime()).child(grade).child(class1).child(number+" "+name).child("SeatNumber").setValue(seatNumber);
     }
     @Override
     public void onBackPressed() {

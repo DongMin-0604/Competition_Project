@@ -16,191 +16,142 @@
         android:scaleType="centerCrop"
         android:layout_marginTop="10px"
         android:layout_marginLeft="10px"
-        android:src="@drawable/back_img"/>
+        android:src="@drawable/back_img2"/>
 
     <LinearLayout
         android:layout_width="1080px"
         android:layout_height="1300px"
-        android:background="@drawable/check_img"
+        android:background="@drawable/check_img2"
         android:orientation="vertical"
         android:layout_marginTop="50px"
         android:gravity="center_horizontal"
         android:layout_gravity="center">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="left"
-        android:layout_marginTop="190px"
-        android:layout_marginBottom="10px"
-        >
-        <TextView
-            android:layout_width="500px"
-            android:layout_height="wrap_content"
-            android:text="학년: "
-            android:textSize="80px"
-            android:gravity="right"
-            android:textColor="#3C3C3C"
-            android:fontFamily="@font/pretendard_bold"
-            />
-        <TextView
-            android:id="@+id/TV_grade"
-            android:layout_width="400px"
-            android:layout_height="wrap_content"
-            android:text="111111111111111111"
-            android:textSize="80px"
-            android:gravity="left"
-            android:textColor="@color/black"
-            android:fontFamily="@font/pretendard_bold"
-            android:layout_marginLeft="4px"
-            android:singleLine="true"
-            />
-    </LinearLayout>
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="900px"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="left"
+            android:layout_marginTop="200px"
             android:layout_marginBottom="10px"
             >
             <TextView
-                android:layout_width="500px"
+                android:id="@+id/TV_grade"
+                android:layout_width="300px"
                 android:layout_height="wrap_content"
-                android:text="반: "
-                android:textSize="80px"
+                android:text="1학년"
+                android:textSize="70px"
                 android:gravity="right"
-                android:textColor="#3C3C3C"
+                android:textColor="@color/black"
                 android:fontFamily="@font/pretendard_bold"
+                android:layout_marginLeft="4px"
+                android:layout_weight="1"
+                android:singleLine="true"
                 />
             <TextView
                 android:id="@+id/TV_class"
-                android:layout_width="400px"
+                android:layout_width="120px"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="80px"
-                android:gravity="left"
+                android:textSize="70px"
+                android:gravity="center"
                 android:textColor="@color/black"
                 android:fontFamily="@font/pretendard_bold"
                 android:singleLine="true"
+                android:layout_weight="1"
                 android:layout_marginLeft="4px"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="left"
-            android:layout_marginBottom="10px"
-            >
-            <TextView
-                android:layout_width="500px"
-                android:layout_height="wrap_content"
-                android:text="번호: "
-                android:textSize="80px"
-                android:gravity="right"
-                android:textColor="#3C3C3C"
-                android:fontFamily="@font/pretendard_bold"
                 />
             <TextView
                 android:id="@+id/TV_number"
-                android:layout_width="400px"
+                android:layout_width="300px"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="80px"
+                android:textSize="70px"
                 android:gravity="left"
                 android:textColor="@color/black"
                 android:fontFamily="@font/pretendard_bold"
                 android:layout_marginLeft="4px"
+                android:layout_weight="1"
                 android:singleLine="true"
                 />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="left"
-            android:layout_marginBottom="10px"
-            >
-            <TextView
-                android:layout_width="500px"
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="900px"
                 android:layout_height="wrap_content"
-                android:text="이름: "
-                android:textSize="80px"
-                android:gravity="right"
-                android:textColor="#3C3C3C"
-                android:fontFamily="@font/pretendard_bold"
-                />
-            <TextView
-                android:id="@+id/TV_name"
-                android:layout_width="400px"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10px"
+                >
+                <TextView
+                    android:id="@+id/TV_name"
+                    android:layout_width="400px"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="75px"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:layout_marginLeft="4px"
+                    android:singleLine="true"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="900px"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="80px"
+                android:orientation="horizontal"
                 android:gravity="left"
-                android:textColor="@color/black"
-                android:fontFamily="@font/pretendard_bold"
-                android:layout_marginLeft="4px"
-                android:singleLine="true"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="left"
-            android:layout_marginBottom="10px"
-            >
-            <TextView
-                android:layout_width="500px"
-                android:layout_height="wrap_content"
-                android:text="좌석 번호: "
-                android:textSize="80px"
-                android:gravity="right"
-                android:textColor="#3C3C3C"
-                android:fontFamily="@font/pretendard_bold"
-                />
-            <TextView
-                android:id="@+id/TV_seat_number"
-                android:layout_width="400px"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="80px"
-                android:gravity="left"
-                android:textColor="@color/black"
-                android:fontFamily="@font/pretendard_bold"
-                android:layout_marginLeft="4px"
-                android:singleLine="true"
-                />
-        </LinearLayout>
-        //시간은 파이어베이스에서 확인 가능하다면 굳이 코딩할 필요 없음
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="left">
-            <TextView
-                android:layout_width="500px"
-                android:layout_height="wrap_content"
-                android:text="시간: "
-                android:textSize="80px"
-                android:gravity="right"
-                android:textColor="#3C3C3C"
-                android:fontFamily="@font/pretendard_bold"
-                />
-            <TextView
-                android:id="@+id/TV_time"
-                android:layout_width="400px"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="80px"
-                android:gravity="left"
-                android:textColor="@color/black"
-                android:fontFamily="@font/pretendard_bold"
-                android:layout_marginLeft="4px"
-                android:singleLine="true"
-                />
-        </LinearLayout>
+                android:layout_marginBottom="10px"
+                android:layout_marginTop="80px"
+                >
+                <TextView
+                    android:layout_width="400px"
+                    android:layout_height="wrap_content"
+                    android:text="좌석 번호: "
+                    android:textSize="70px"
+                    android:gravity="right"
+                    android:textColor="#3C3C3C"
+                    android:fontFamily="@font/pretendard_bold"
+                    />
+                <TextView
+                    android:id="@+id/TV_seat_number"
+                    android:layout_width="400px"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="70px"
+                    android:gravity="left"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:layout_marginLeft="4px"
+                    android:singleLine="true"
+                    />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="900px"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="left">
+                    <TextView
+                        android:layout_width="400px"
+                        android:layout_height="wrap_content"
+                        android:text="날짜: "
+                        android:textSize="70px"
+                        android:gravity="right"
+                        android:textColor="#3C3C3C"
+                        android:fontFamily="@font/pretendard_bold"
+                        />
+                    <TextView
+                        android:id="@+id/TV_time"
+                        android:layout_width="400px"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="65px"
+                        android:gravity="left"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/pretendard_bold"
+                        android:layout_marginLeft="4px"
+                        android:singleLine="true"
+                        />
+                </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
