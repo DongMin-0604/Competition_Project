@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "611446710383",
+    "project_id": "lunchtime-43aa6",
+    "storage_bucket": "lunchtime-43aa6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611446710383:android:a0a6efd3d7b693a929ed9a",
+        "android_client_info": {
+          "package_name": "com.code.competition_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611446710383-radbdcb86ffi6edqa6q3hidie48aabja.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.code.competition_project",
+            "certificate_hash": "926d384b40a64f99266640c098a5695176b6f5c5"
+          }
+        },
+        {
+          "client_id": "611446710383-vdspniqsg4fcvajd5hktvau6g5m3hsec.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyHLm-ySMn88ms0BUwvAaozLlGBlo2S1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611446710383-vdspniqsg4fcvajd5hktvau6g5m3hsec.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
