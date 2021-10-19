@@ -23,7 +23,7 @@
         android:layout_height="1300px"
         android:background="@drawable/check_img2"
         android:orientation="vertical"
-        android:layout_marginTop="50px"
+        android:layout_marginTop="170px"
         android:gravity="center_horizontal"
         android:layout_gravity="center">
 
