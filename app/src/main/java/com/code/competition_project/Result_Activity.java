@@ -40,7 +40,7 @@ public class Result_Activity extends AppCompatActivity {
         init();
         getResult();
         setTextView();
-        SendToFireBase(grade,class1,seatNumber,name);
+        SendToFireBase();
 
         bt_next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +87,7 @@ public class Result_Activity extends AppCompatActivity {
 
         return format.format(mDate);
     }
-    public void SendToFireBase(String grade,String class1,String seatNumber,String name){
+    public void SendToFireBase(){
         //파이어베이스 전송 코드 영역
         databaseReference.child(getTime()).child(grade).child(class1).child(number+" "+name).child("SeatNumber").setValue(seatNumber);
         //파이어베이스 값 받아오기 위한 수정 코드 영역(이슈없음)

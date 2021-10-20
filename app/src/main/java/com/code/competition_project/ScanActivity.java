@@ -48,8 +48,8 @@ public class ScanActivity extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
         if (result != null){
             if (result.getContents() == null){
-                finish();
                 Toast.makeText(this,"스캔 취소",Toast.LENGTH_SHORT).show();
+                finish();
                 //스캔 취소해도 넘어가게하기 (테스트용 코드)
 //                    Toast.makeText(this,"스캔 완료",Toast.LENGTH_LONG).show();
 //                    seatNumber = result.getContents();
