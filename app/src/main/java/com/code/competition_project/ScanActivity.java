@@ -50,7 +50,18 @@ public class ScanActivity extends AppCompatActivity {
             if (result.getContents() == null){
                 finish();
                 Toast.makeText(this,"스캔 취소",Toast.LENGTH_SHORT).show();
-
+                //스캔 취소해도 넘어가게하기 (테스트용 코드)
+//                    Toast.makeText(this,"스캔 완료",Toast.LENGTH_LONG).show();
+//                    seatNumber = result.getContents();
+//                     seatNumber = "10번";
+//                    Intent intent_view_Change = new Intent(getApplicationContext(),Result_Activity.class);
+//                    //세컨드 엑티비티로 값 넘기기
+//                    intent_view_Change.putExtra("grade_Scan",grade);
+//                    intent_view_Change.putExtra("class_Scan",class1);
+//                    intent_view_Change.putExtra("number_Scan",number);
+//                    intent_view_Change.putExtra("name_Scan",name);
+//                    intent_view_Change.putExtra("seatNumber_Scan",seatNumber);
+//                    startActivity(intent_view_Change);
             }else {
                 if (result.getContents().contains("번")){
                     Toast.makeText(this,"스캔 완료",Toast.LENGTH_LONG).show();
